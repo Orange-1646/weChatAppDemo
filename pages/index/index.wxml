@@ -1,0 +1,7 @@
+<!--pages/index/index.wxml-->
+<!-- <text>pages/index/index.wxml</text> -->
+<view class='container'>
+  <image class='avatar' src='/image/avatar.png'></image>
+  <text class='name'>karl     li</text>
+  <text class='desc' catch:tap="navigateInside">welcome to my first wechat app demo</text>
+</view>

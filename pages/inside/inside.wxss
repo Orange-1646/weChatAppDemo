@@ -1,0 +1,22 @@
+/* pages/inside/inside.wxss */
+.wrapper{
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+text{
+  width: 720rpx;
+}
+.sm{
+  width: 720rpx;
+}
+.desc{
+  letter-spacing: 5rpx;
+  line-height: 72rpx;
+}
+.sub{
+  margin-top: 20rpx;
+  text-align: right;
+}

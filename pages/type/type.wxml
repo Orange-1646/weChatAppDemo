@@ -1,0 +1,47 @@
+<view class="container">
+  <view class='title'>
+    <view class='titleImage'>
+      <image mode='widthFix' src='{{titleImgSrc}}'></image>
+    </view>
+    <view class='titleDesc'>
+      <view>
+        <text class='titleName'>{{title}}</text>
+      </view>
+      <view class='titleOptions'>
+        <image src='/image/icon/Icon_more.png'></image>
+        <image src='/image/icon/Icon_relay.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='listContainer'>
+    <view class='list' wx:for="{{recommendList}}" wx:key="item.id" data-itemId="{{item.id}}" catch:tap="navigateToDetail">
+      <view class='each-list'>
+        <view class='mark'>
+          <image class='avatar' src='{{item.markPeopleAvatar}}'></image>
+            <view class='mark-info'>
+              <text>{{item.markPeople}}</text>
+              <text>等</text>
+              <text>{{item.markCount}}</text>
+              <text>人马克了</text>
+            </view>
+        </view>
+        <view class='mark-content'>
+          <image class='content-pic' mode='widthFix' src='{{item.articleImgSrc}}'></image>
+          <text class='pic-desc'>{{item.articleTitle}}</text>
+          <view class='content-extension'>
+            <text>{{item.publishTime}}</text>
+            <view class='more-options'>
+              <image catch:tap='repost' src='/image/icon/Icon_more.png'></image>
+              <button open-type='share'>
+                <image src='/image/icon/Icon_relay.png'></image>
+              </button>
+              <image catch:tap="likeTap" wx:if="{{likeList[index]}}" data-listIndex="{{index}}" src='/image/icon/Icon_circle_fill.png'></image>
+              <image catch:tap="likeTap" wx:else="{{likeList[index]}}" data-listIndex="{{index}}" src='/image/icon/Icon_circle.png'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

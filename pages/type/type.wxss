@@ -1,0 +1,41 @@
+@import "../common-list.wxss";
+.container>.title>.titleImage>image{
+  width: 100%;
+}
+.container>.title{
+  position: relative;
+}
+.titleDesc{
+  width: 650rpx;
+  position: absolute;
+  height: 200rpx;
+  background: white;
+  top: 80%;
+  left: 50rpx;
+}
+.titleDesc>view>text{
+  font-size: 60rpx;
+  display: inline-block;
+  padding: 20rpx 10rpx;
+}
+.titleOptions>image{
+  width: 60rpx;
+  height: 60rpx;
+  float: right;
+  margin: 0 20rpx;
+}
+.listContainer{
+  background: #eee;
+  padding-top: 100rpx;
+}
+
+
+.list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50rpx 50rpx 0;
+}
+.content-extension>text{
+  border: none;
+}

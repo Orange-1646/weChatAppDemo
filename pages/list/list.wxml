@@ -1,0 +1,42 @@
+<view class='container'>
+  <view class='recommended'>
+    <view class='recommended-article'>
+      <text class='date'>{{recommendHead.data.date}}</text>
+      <text class='recommended-title'>{{recommendHead.data.title}}</text>
+      <image mode='widthFix' class='recommended-img' src='{{recommendHead.data.imgSrc}}'></image>
+    </view>
+    <view class='recommended-contents'>
+    <text>+</text>
+    <text wx:for='{{recommendType}}' catch:tap="typeNavigate" data-type="{{item.typeId}}" wx:key="item.typeId">{{item.type}}</text>
+    <text>●●●</text>
+    </view>
+  </view>
+  <view class='list' wx:for="{{recommendList}}" wx:key="item.id">
+    <view class='each-list'>
+      <view class='mark'>
+        <image class='avatar' src='{{item.markPeopleAvatar}}'></image>
+          <view class='mark-info'>
+            <text>{{item.markPeople}}</text>
+            <text>等</text>
+            <text>{{item.markCount}}</text>
+            <text>人马克了</text>
+          </view>
+      </view>
+      <view class='mark-content'>
+        <image class='content-pic' mode='widthFix' src='{{item.articleImgSrc}}'></image>
+        <text class='pic-desc'>{{item.articleTitle}}</text>
+        <view class='content-extension'>
+          <text>{{item.articleType}}</text>
+          <view class='more-options'>
+            <image catch:tap='repost' data-content="{{item.articleType}}" src='/image/icon/Icon_more.png'></image>
+            <button open-type='share'>
+              <image src='/image/icon/Icon_relay.png'></image>
+            </button>
+            <image catch:tap="likeTap" wx:if="{{likeList[index]}}" data-listIndex="{{index}}" src='/image/icon/Icon_circle_fill.png'></image>
+            <image catch:tap="likeTap" wx:else="{{likeList[index]}}" data-listIndex="{{index}}" src='/image/icon/Icon_circle.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

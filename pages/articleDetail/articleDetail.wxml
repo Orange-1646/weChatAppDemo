@@ -1,0 +1,60 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<wxs src="../../utils/secToMin.wxs" module="secToMin"></wxs>
+<view class="container">
+  <view class='header'>
+    <view class='title'>
+      <text>{{title}}</text>
+    </view>
+    <view class='titleInfo'>
+      <text class='author'>{{author}}</text>
+      <text class='date'>{{publishTime}}</text>
+    </view>
+  </view>
+  <view class='presentation'>
+    <swiper wx:if="{{banner[0]}}" indicator-dots='true' autoplay='true' interval='3000'>
+      <swiper-item wx:for="{{banner}}" wx:key="{{index}}">
+        <image src='{{item}}'></image>
+      </swiper-item>
+    </swiper>
+    <video wx:if="{{video.src}}" src='{{video.src}}' id='{{video.id}}' duration='{{video.duration}}'>
+      <cover-view wx:if="{{!videoPlaying}}" class='cover'>
+        <cover-image class='coverImage' src='{{video.poster}}'></cover-image>  
+        <cover-view bind:tap="playVideo" class='coverControls'>
+          <cover-image src='/image/avatar.png'></cover-image>
+          <cover-view>{{video.duration}}</cover-view>
+        </cover-view>      
+      </cover-view>
+    </video>
+    <view wx:if="{{audio.src}}" class='audioContainer'>
+      <view class='playButton' catch:tap="switchAudio" style='background: url({{audio.poster}}); background-size: 100% 100%'>
+        <image hidden="{{play}}" src='/image/play.svg'></image>
+        <image hidden="{{!play}}" src='/image/pause.svg'></image>
+      </view>
+      <view class='controller'>
+        <view class='audioTitle'>
+          <text>{{audio.title}}</text>
+        </view>
+        <view class='audioSource'>
+          <text>{{audio.from}}</text>
+        </view>
+        <view class='audioProgress'>
+          <progress activeColor="#123456" backgroundColor='#eee' percent="{{audioProgress}}"></progress>
+          <view class='controllButton' catch:touchend="endDrag" catch:touchstart="startDrag" catch:touchmove="dragProgress" style='left:{{progressBtnPos}}rpx'></view>
+          <view class='audioTime'>
+            <text>{{secToMin.converter((audioProgress - 1)*audio.duration/100)}}</text>
+            <text>{{secToMin.converter(audio.duration)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <text decode='{{true}}'>{{filter.filter(content)}}</text>
+  </view>
+  <view class='footer'>
+    <view class='readNumber'>
+      <text class='read'>阅读</text>
+      <text class='number'>{{readNum}}</text>
+    </view>
+  </view>
+</view>

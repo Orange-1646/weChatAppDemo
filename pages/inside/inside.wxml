@@ -1,0 +1,10 @@
+<!--pages/inside/inside.wxml-->
+<view class='wrapper'>
+<image src='/image/picture.png' class='sm' mode='widthFix'></image>
+<text class='desc'>
+This is a picture of the omyoji Seimei. And this is some random text to fill up the space
+</text>
+<text class='sub'>
+---Karl at 2019/01/17
+</text>
+</view>

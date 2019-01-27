@@ -1,0 +1,129 @@
+.title{
+  font-size: 50rpx;
+  font-weight: bold;
+  padding: 50rpx 20rpx 0;
+}
+.titleInfo, .footer{
+  color: #999;
+  font-size: 40rpx;
+  padding: 50rpx 0 0; 
+}
+.footer{
+  padding-left: 20rpx;
+ }
+.author{
+  margin: 0 20rpx;
+}
+.presentation{
+  width: 100%
+}
+
+.content{
+  white-space: pre-wrap;
+  text-indent: 2em;
+  line-height: 2em;
+  padding: 0 10rpx;
+}
+.number{
+  margin-left: 20rpx;
+}
+.presentation{
+  display: flex;
+  justify-content: center;
+}
+swiper, video{
+  width: 720rpx;
+  height: 500rpx;
+}
+.presentation image{
+  width: 100%;
+  height: 100%
+}
+.cover{
+  position: relative;
+  width: 720rpx;
+  height: 500rpx;
+  background: #123456;
+}
+.coverControls{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-top: -50rpx;
+  margin-left: -50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6)
+}
+.coverControls cover-image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 20rpx;
+}
+.coverControls cover-view{
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.audioContainer{
+  margin-top: 40rpx;
+  width: 720rpx;
+  height: 300rpx;
+  display: flex;
+  align-items: center;
+  background: #fdfdfd;
+  border: 1rpx solid #f2f2f2;
+  margin-bottom: 40rpx;
+}
+.playButton{
+  width: 150rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playButton>image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.controller{
+  margin: 0 auto;
+  width: 500rpx;
+  height: 300rpx;
+}
+.audioTitle{
+  font-size: 50rpx;
+  text-align: left;
+  padding: 10rpx 0;
+}
+.audioSource{
+  color: #aaa;
+  text-align: left;
+  padding: 10rpx 0;
+}
+.audioProgress{
+  margin-top: 40rpx;
+  position: relative;
+}
+.audioProgress>progress{
+  stroke-width: 20rpx;
+}
+.audioProgress>.controllButton{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: -5rpx;
+  border-radius: 50%;
+  background: #123456;
+  position: absolute;
+  top: 0;
+}
+.audioTime{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
